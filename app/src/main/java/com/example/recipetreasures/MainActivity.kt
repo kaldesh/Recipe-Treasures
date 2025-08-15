@@ -14,10 +14,18 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
         val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-        val userEmail = prefs.getString(KEY_EMAIL, "Guest")
+        val userEmail = prefs.getString(KEY_EMAIL, null)
+
+
+        if (userEmail == null) {
+            startActivity(Intent(this, AuthActivity::class.java))
+            finish()
+            return
+        }
+
+        setContentView(R.layout.activity_main)
 
         val welcomeText: TextView = findViewById(R.id.welcomeText)
         val logoutBtn: Button = findViewById(R.id.logoutBtn)
@@ -25,10 +33,7 @@ class MainActivity : AppCompatActivity() {
         welcomeText.text = "Welcome, $userEmail!"
 
         logoutBtn.setOnClickListener {
-            // Clear saved login data
             prefs.edit().clear().apply()
-
-            // Go back to login page
             startActivity(Intent(this, AuthActivity::class.java))
             finish()
         }
