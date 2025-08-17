@@ -1,0 +1,54 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/food_bg"
+    android:padding="20dp"
+    tools:context=".AboutUs2Fragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About the Creators"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:paddingBottom="16dp"/>
+
+        <!-- Creators -->
+        <TextView
+            android:id="@+id/creators"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Made by: Ali Mohamed, Omar, and Ziad"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            android:textColor="#F8F4F4"
+            android:gravity="center"
+            android:paddingBottom="24dp"/>
+
+        <!-- App Brief -->
+        <TextView
+            android:id="@+id/app_brief"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recipe Treasures is your go-to app for discovering, saving, and sharing recipes. Whether you're a beginner or a cooking enthusiast, you’ll find inspiration in a wide collection of meals. Enjoy step-by-step instructions, beautiful visuals, and the ability to save your favorites for later — all in one place."
+            android:textSize="16sp"
+            android:lineSpacingExtra="6dp"
+            android:textColor="@android:color/white"
+            android:gravity="center"/>
+    </LinearLayout>
+</ScrollView>
+
+
+
+
+
