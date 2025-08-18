@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
@@ -54,6 +55,14 @@ class MainActivity : AppCompatActivity() {
         if (prefs.getString(KEY_EMAIL, null) == null) {
             startActivity(Intent(this, AuthActivity::class.java))
             finish()
+        }
+
+        // Hide BottomNavigationView when details fragment is displayed
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when(destination.id) {
+                R.id.detailsFragment -> bottomNav.visibility = View.GONE
+                else -> bottomNav.visibility = View.VISIBLE
+            }
         }
     }
 
