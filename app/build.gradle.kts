@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("androidx.navigation.safeargs.kotlin")
     // قم بتغيير Kapt إلى KSP للحصول على أداء أفضل
     id("com.google.devtools.ksp")
 }
