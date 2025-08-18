@@ -1,0 +1,28 @@
+# Built application files
+*.apk
+*.aab
+*.ap_
+
+# Files for the ART
+*.dex
+
+# Gradle files
+.gradle/
+build/
+/local.properties
+/gradlew
+/gradlew.bat
+
+# IDE files
+.idea/workspace.xml
+.idea/libraries/
+.idea/runConfigurations/
+.idea/modules.xml
+.idea/compiler.xml
+.idea/caches/
+
+# External native build files
+.cxx/
+*.o
+*.so
+/build/generated/source/
