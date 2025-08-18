@@ -11,17 +11,21 @@
 
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_detailsFragment2"
-            app:destination="@id/detailsFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.example.recipetreasures.DetailsFragment"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_details" />
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="recipeId"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/aboutUs2"
         android:name="com.example.recipetreasures.AboutUs2Fragment"
@@ -42,5 +46,9 @@
         android:id="@+id/searchFragment"
         android:name="com.example.recipetreasures.SearchFragment"
 
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
 </navigation>

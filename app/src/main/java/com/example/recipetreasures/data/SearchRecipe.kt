@@ -5,5 +5,5 @@ import com.google.gson.annotations.SerializedName
 
 data class SearchRecipe(
     @SerializedName("meals" )
-    var meals : List<Meals>? = null
+    var meals : List<Meals> = emptyList<Meals>()
 )

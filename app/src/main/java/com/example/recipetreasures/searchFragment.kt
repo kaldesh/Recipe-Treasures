@@ -4,12 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recipetreasures.data.AllAPi
 import com.example.recipetreasures.databinding.FragmentSearchBinding
@@ -37,7 +39,11 @@ class SearchFragment : Fragment() {
 
         // Initialize adapter with a mutable list
         adapter = MealsAdapter(mutableListOf()) { meal ->
-            // TODO: Navigate to detail screen
+            val mealId = meal.idMeal
+            if (mealId != null)
+                findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToDetailsFragment(meal.idMeal!!))
+            else
+                Toast.makeText(requireContext(), "Meal ID is null", Toast.LENGTH_SHORT).show()
         }
 
         binding.recyclerViewSearch.layoutManager = LinearLayoutManager(requireContext())

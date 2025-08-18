@@ -11,7 +11,7 @@ data class MealsUiModel(
     val instructions: String,
     val thumbnailUrl: String,
     val tags: String?,
-    val youtubeUrl: String?,
+    val youtubeUrl: String,
     val ingredients: List<String>,
     val measures: List<String>
 )
@@ -38,7 +38,7 @@ fun Meals.toUiModel(): MealsUiModel {
         instructions = strInstructions ?: "",
         thumbnailUrl = strMealThumb ?: "",
         tags = strTags,
-        youtubeUrl = strYoutube,
+        youtubeUrl = strYoutube ?: "",
         ingredients = ingredientsList,
         measures = measuresList
     )

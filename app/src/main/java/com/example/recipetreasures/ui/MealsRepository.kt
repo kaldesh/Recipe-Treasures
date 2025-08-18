@@ -13,4 +13,7 @@ class MealsRepository(private val api: RecipeEndPoint) {
         return api.searchMeals(query)
     }
 
+    suspend fun getMealById(id: String): Meals {
+        return api.getMealById(id).meals.get(0)
+    }
 }

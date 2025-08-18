@@ -9,5 +9,8 @@ interface RecipeEndPoint {
 
     @GET("search.php")
     suspend fun getMealsByLetter(@Query("f") letter: String): SearchRecipe
+
+    @GET("lookup.php")
+    suspend fun getMealById(@Query("i") id: String): SearchRecipe
 }
 
