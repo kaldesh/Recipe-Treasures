@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.recipetreasures.app-mergeDebugResources-46:/values-en-rAU/values-en-rAU.xml",
+            "outputFile": "com.example.recipetreasures.app-mergeDebugResources-51:/values-en-rAU/values-en-rAU.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ziadm\\.gradle\\caches\\8.11.1\\transforms\\10c262db525f522da102074c9ff8847b\\transformed\\navigation-ui-2.9.3\\res\\values-en-rAU\\values-en-rAU.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,161",
-                        "endColumns": "105,116",
-                        "endOffsets": "156,273"
-                    },
-                    "to": {
-                        "startLines": "36,37",
-                        "startColumns": "4,4",
-                        "startOffsets": "3481,3587",
-                        "endColumns": "105,116",
-                        "endOffsets": "3582,3699"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ziadm\\.gradle\\caches\\8.11.1\\transforms\\3e8ffa742ebb479efddec879b158704f\\transformed\\core-1.17.0\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "source": "C:\\Users\\Asus\\.gradle\\caches\\8.11.1\\transforms\\ea97cb634540ca351bdb0f75ac4d9e2d\\transformed\\core-1.13.1\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -38,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ziadm\\.gradle\\caches\\8.11.1\\transforms\\bede8940356dd6e408fedc11508e1362\\transformed\\appcompat-1.6.1\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "source": "C:\\Users\\Asus\\.gradle\\caches\\8.11.1\\transforms\\6f565310879f201f4be0ac90004848db\\transformed\\navigation-ui-2.7.7\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,161",
+                        "endColumns": "105,116",
+                        "endOffsets": "156,273"
+                    },
+                    "to": {
+                        "startLines": "36,37",
+                        "startColumns": "4,4",
+                        "startOffsets": "3481,3587",
+                        "endColumns": "105,116",
+                        "endOffsets": "3582,3699"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Asus\\.gradle\\caches\\8.11.1\\transforms\\33c0557e13413b7a993ca6bed620fbd7\\transformed\\appcompat-1.6.1\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

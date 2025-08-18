@@ -15,16 +15,13 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.recipetreasures.AuthActivity
-import com.example.recipetreasures.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
-
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
-    private val PREFS_NAME = "UserPrefs"
-    private val KEY_EMAIL = "email"
+    private val PREFS_NAME = "UserSession"
+    private val KEY_EMAIL = "current_user_email"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomNav.setupWithNavController(navController)
 
-        // Handle reselection to always pop back to root
+
         bottomNav.setOnItemReselectedListener { item ->
             when (item.itemId) {
                 R.id.homeFragment -> navController.popBackStack(R.id.homeFragment, false)
@@ -50,6 +47,7 @@ class MainActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(setOf(R.id.homeFragment, R.id.favouritesFragment))
         setupActionBarWithNavController(navController, appBarConfiguration)
+
 
         val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         if (prefs.getString(KEY_EMAIL, null) == null) {
@@ -91,6 +89,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return when (item.itemId) {
+
             R.id.menu_sign_out -> {
                 getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE).edit().clear().apply()
                 startActivity(Intent(this, AuthActivity::class.java))

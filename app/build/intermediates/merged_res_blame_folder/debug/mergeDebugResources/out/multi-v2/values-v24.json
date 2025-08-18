@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.recipetreasures.app-mergeDebugResources-46:/values-v24/values-v24.xml",
+            "outputFile": "com.example.recipetreasures.app-mergeDebugResources-51:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ziadm\\.gradle\\caches\\8.11.1\\transforms\\0cb02351b2d18cad36c6d8c3181439d6\\transformed\\material-1.10.0\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\Asus\\.gradle\\caches\\8.11.1\\transforms\\aa128917db84ad5bfaecfd5f99092c52\\transformed\\material-1.12.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ziadm\\.gradle\\caches\\8.11.1\\transforms\\bede8940356dd6e408fedc11508e1362\\transformed\\appcompat-1.6.1\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\Asus\\.gradle\\caches\\8.11.1\\transforms\\33c0557e13413b7a993ca6bed620fbd7\\transformed\\appcompat-1.6.1\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
