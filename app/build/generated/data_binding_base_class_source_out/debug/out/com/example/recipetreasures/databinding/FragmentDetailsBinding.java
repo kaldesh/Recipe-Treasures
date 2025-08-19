@@ -5,19 +5,91 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.Guideline;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.recipetreasures.R;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentDetailsBinding implements ViewBinding {
   @NonNull
   private final FrameLayout rootView;
 
-  private FragmentDetailsBinding(@NonNull FrameLayout rootView) {
+  @NonNull
+  public final TextView areaTv;
+
+  @NonNull
+  public final TextView catagoryTv;
+
+  @NonNull
+  public final Guideline guideline2;
+
+  @NonNull
+  public final Guideline guideline3;
+
+  @NonNull
+  public final ImageView imageView;
+
+  @NonNull
+  public final TextView ingredientsTv;
+
+  @NonNull
+  public final TextView instructionsTv;
+
+  @NonNull
+  public final TextView measuresTv;
+
+  @NonNull
+  public final TextView nameTv;
+
+  @NonNull
+  public final TextView textView14;
+
+  @NonNull
+  public final TextView textView2;
+
+  @NonNull
+  public final TextView textView5;
+
+  @NonNull
+  public final TextView textView8;
+
+  @NonNull
+  public final TextView textView9;
+
+  @NonNull
+  public final YouTubePlayerView ytPlayerView;
+
+  private FragmentDetailsBinding(@NonNull FrameLayout rootView, @NonNull TextView areaTv,
+      @NonNull TextView catagoryTv, @NonNull Guideline guideline2, @NonNull Guideline guideline3,
+      @NonNull ImageView imageView, @NonNull TextView ingredientsTv,
+      @NonNull TextView instructionsTv, @NonNull TextView measuresTv, @NonNull TextView nameTv,
+      @NonNull TextView textView14, @NonNull TextView textView2, @NonNull TextView textView5,
+      @NonNull TextView textView8, @NonNull TextView textView9,
+      @NonNull YouTubePlayerView ytPlayerView) {
     this.rootView = rootView;
+    this.areaTv = areaTv;
+    this.catagoryTv = catagoryTv;
+    this.guideline2 = guideline2;
+    this.guideline3 = guideline3;
+    this.imageView = imageView;
+    this.ingredientsTv = ingredientsTv;
+    this.instructionsTv = instructionsTv;
+    this.measuresTv = measuresTv;
+    this.nameTv = nameTv;
+    this.textView14 = textView14;
+    this.textView2 = textView2;
+    this.textView5 = textView5;
+    this.textView8 = textView8;
+    this.textView9 = textView9;
+    this.ytPlayerView = ytPlayerView;
   }
 
   @Override
@@ -43,10 +115,105 @@ public final class FragmentDetailsBinding implements ViewBinding {
 
   @NonNull
   public static FragmentDetailsBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.areaTv;
+      TextView areaTv = ViewBindings.findChildViewById(rootView, id);
+      if (areaTv == null) {
+        break missingId;
+      }
 
-    return new FragmentDetailsBinding((FrameLayout) rootView);
+      id = R.id.catagoryTv;
+      TextView catagoryTv = ViewBindings.findChildViewById(rootView, id);
+      if (catagoryTv == null) {
+        break missingId;
+      }
+
+      id = R.id.guideline2;
+      Guideline guideline2 = ViewBindings.findChildViewById(rootView, id);
+      if (guideline2 == null) {
+        break missingId;
+      }
+
+      id = R.id.guideline3;
+      Guideline guideline3 = ViewBindings.findChildViewById(rootView, id);
+      if (guideline3 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView;
+      ImageView imageView = ViewBindings.findChildViewById(rootView, id);
+      if (imageView == null) {
+        break missingId;
+      }
+
+      id = R.id.ingredientsTv;
+      TextView ingredientsTv = ViewBindings.findChildViewById(rootView, id);
+      if (ingredientsTv == null) {
+        break missingId;
+      }
+
+      id = R.id.instructionsTv;
+      TextView instructionsTv = ViewBindings.findChildViewById(rootView, id);
+      if (instructionsTv == null) {
+        break missingId;
+      }
+
+      id = R.id.measuresTv;
+      TextView measuresTv = ViewBindings.findChildViewById(rootView, id);
+      if (measuresTv == null) {
+        break missingId;
+      }
+
+      id = R.id.nameTv;
+      TextView nameTv = ViewBindings.findChildViewById(rootView, id);
+      if (nameTv == null) {
+        break missingId;
+      }
+
+      id = R.id.textView14;
+      TextView textView14 = ViewBindings.findChildViewById(rootView, id);
+      if (textView14 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView2;
+      TextView textView2 = ViewBindings.findChildViewById(rootView, id);
+      if (textView2 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView5;
+      TextView textView5 = ViewBindings.findChildViewById(rootView, id);
+      if (textView5 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView8;
+      TextView textView8 = ViewBindings.findChildViewById(rootView, id);
+      if (textView8 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView9;
+      TextView textView9 = ViewBindings.findChildViewById(rootView, id);
+      if (textView9 == null) {
+        break missingId;
+      }
+
+      id = R.id.ytPlayerView;
+      YouTubePlayerView ytPlayerView = ViewBindings.findChildViewById(rootView, id);
+      if (ytPlayerView == null) {
+        break missingId;
+      }
+
+      return new FragmentDetailsBinding((FrameLayout) rootView, areaTv, catagoryTv, guideline2,
+          guideline3, imageView, ingredientsTv, instructionsTv, measuresTv, nameTv, textView14,
+          textView2, textView5, textView8, textView9, ytPlayerView);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

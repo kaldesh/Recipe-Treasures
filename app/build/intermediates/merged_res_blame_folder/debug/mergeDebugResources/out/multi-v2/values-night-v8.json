@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.recipetreasures.app-mergeDebugResources-51:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.recipetreasures.app-mergeDebugResources-53:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Asus\\.gradle\\caches\\8.11.1\\transforms\\33c0557e13413b7a993ca6bed620fbd7\\transformed\\appcompat-1.6.1\\res\\values-night-v8\\values-night-v8.xml",
+                    "source": "C:\\Users\\Asus\\.gradle\\caches\\8.11.1\\transforms\\bd7f7cf4dd157b3850482f74494ffdf5\\transformed\\appcompat-1.6.1\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -21,26 +21,7 @@
                     }
                 },
                 {
-                    "source": "E:\\Recipe-Treasures\\app\\src\\main\\res\\values-night\\themes.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "100",
-                        "endLines": "5",
-                        "endColumns": "12",
-                        "endOffsets": "322"
-                    },
-                    "to": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "5",
-                        "endColumns": "12",
-                        "endOffsets": "173"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Asus\\.gradle\\caches\\8.11.1\\transforms\\aa128917db84ad5bfaecfd5f99092c52\\transformed\\material-1.12.0\\res\\values-night-v8\\values-night-v8.xml",
+                    "source": "C:\\Users\\Asus\\.gradle\\caches\\8.11.1\\transforms\\c36e14234d8be5fbdcce0879df2837ea\\transformed\\material-1.12.0\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -54,6 +35,25 @@
                         "startOffsets": "810,885,996,1085,1186,1293,1400,1499,1606,1709,1836,1924,2048,2150,2252,2368,2470,2584,2712,2828,2950,3086,3206,3340,3460,3572,3787,3904,4028,4158,4280,4418,4552,4668",
                         "endColumns": "74,110,88,100,106,106,98,106,102,126,87,123,101,101,115,101,113,127,115,121,135,119,133,119,111,125,116,123,129,121,137,133,115,119",
                         "endOffsets": "880,991,1080,1181,1288,1395,1494,1601,1704,1831,1919,2043,2145,2247,2363,2465,2579,2707,2823,2945,3081,3201,3335,3455,3567,3693,3899,4023,4153,4275,4413,4547,4663,4783"
+                    }
+                },
+                {
+                    "source": "E:\\Recipe-Treasures\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "from": {
+                        "startLines": "2,6",
+                        "startColumns": "4,4",
+                        "startOffsets": "102,333",
+                        "endLines": "5,9",
+                        "endColumns": "12,12",
+                        "endOffsets": "327,574"
+                    },
+                    "to": {
+                        "startLines": "2,48",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,4788",
+                        "endLines": "5,51",
+                        "endColumns": "12,12",
+                        "endOffsets": "173,5026"
                     }
                 }
             ]

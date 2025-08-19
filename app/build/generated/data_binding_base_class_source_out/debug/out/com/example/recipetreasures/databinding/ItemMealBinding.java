@@ -4,6 +4,7 @@ package com.example.recipetreasures.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -27,6 +28,9 @@ public final class ItemMealBinding implements ViewBinding {
   public final TextView categorytv;
 
   @NonNull
+  public final ImageButton favoriteButton;
+
+  @NonNull
   public final ImageView imageView;
 
   @NonNull
@@ -37,10 +41,12 @@ public final class ItemMealBinding implements ViewBinding {
 
   private ItemMealBinding(@NonNull ConstraintLayout rootView,
       @NonNull ConstraintLayout activityItem, @NonNull TextView categorytv,
-      @NonNull ImageView imageView, @NonNull TextView mealsAlttv, @NonNull TextView titletv) {
+      @NonNull ImageButton favoriteButton, @NonNull ImageView imageView,
+      @NonNull TextView mealsAlttv, @NonNull TextView titletv) {
     this.rootView = rootView;
     this.activityItem = activityItem;
     this.categorytv = categorytv;
+    this.favoriteButton = favoriteButton;
     this.imageView = imageView;
     this.mealsAlttv = mealsAlttv;
     this.titletv = titletv;
@@ -81,6 +87,12 @@ public final class ItemMealBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.favoriteButton;
+      ImageButton favoriteButton = ViewBindings.findChildViewById(rootView, id);
+      if (favoriteButton == null) {
+        break missingId;
+      }
+
       id = R.id.imageView;
       ImageView imageView = ViewBindings.findChildViewById(rootView, id);
       if (imageView == null) {
@@ -99,8 +111,8 @@ public final class ItemMealBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemMealBinding((ConstraintLayout) rootView, activityItem, categorytv, imageView,
-          mealsAlttv, titletv);
+      return new ItemMealBinding((ConstraintLayout) rootView, activityItem, categorytv,
+          favoriteButton, imageView, mealsAlttv, titletv);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
