@@ -12,14 +12,16 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:layout_height="wrap_content"
         android:backgroundTint="#120F0F"
-        android:title="Recipe Treasures"
+        android:paddingTop="32dp"
+        android:paddingBottom="16dp"
+        android:background="?attr/colorPrimary"
         android:titleTextColor="@color/white"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:subtitleTextAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:subtitleTextColor="#FAF9F9" />
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:subtitleTextColor="#FAF9F9"
+        android:title="Recipe Treasures" />
 
     <!-- Fragment container -->
     <androidx.fragment.app.FragmentContainerView

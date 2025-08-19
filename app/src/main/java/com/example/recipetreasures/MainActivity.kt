@@ -58,6 +58,7 @@ class MainActivity : AppCompatActivity() {
 
         // Hide BottomNavigationView when details fragment is displayed
         navController.addOnDestinationChangedListener { _, destination, _ ->
+            supportActionBar?.title = "Welcome, " + getSharedPreferences(PREFS_NAME, MODE_PRIVATE).getString(KEY_EMAIL, "")
             when(destination.id) {
                 R.id.detailsFragment -> bottomNav.visibility = View.GONE
                 else -> bottomNav.visibility = View.VISIBLE
