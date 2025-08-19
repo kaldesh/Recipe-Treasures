@@ -1,5 +1,6 @@
-package com.example.recipetreasures.data
+package com.example.recipetreasures.data.retrofit
 
+import com.example.recipetreasures.data.model.SearchRecipe
 import retrofit2.http.GET
 import retrofit2.http.Query
 

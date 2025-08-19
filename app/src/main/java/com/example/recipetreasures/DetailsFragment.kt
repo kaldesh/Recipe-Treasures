@@ -10,11 +10,11 @@ import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.FitCenter
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import com.example.recipetreasures.data.AllAPi
+import com.example.recipetreasures.data.retrofit.AllAPi
 import com.example.recipetreasures.databinding.FragmentDetailsBinding
 import com.example.recipetreasures.ui.MealDetailsViewModel
 import com.example.recipetreasures.ui.MealDetailsViewModelFactory
-import com.example.recipetreasures.ui.MealsRepository
+import com.example.recipetreasures.data.repo.MealsRepository
 import com.example.recipetreasures.ui.MealsUiModel
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener

@@ -5,7 +5,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.LiveData
-import com.example.recipetreasures.data.Meals
+import com.example.recipetreasures.data.model.Meals
+import com.example.recipetreasures.data.repo.MealsRepository
 import kotlinx.coroutines.launch
 
 class MealsViewModel(private val repository: MealsRepository) : ViewModel() {

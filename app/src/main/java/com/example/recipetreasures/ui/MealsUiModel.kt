@@ -1,6 +1,6 @@
 package com.example.recipetreasures.ui
 
-import com.example.recipetreasures.data.Meals
+import com.example.recipetreasures.data.model.Meals
 
 
 data class MealsUiModel(

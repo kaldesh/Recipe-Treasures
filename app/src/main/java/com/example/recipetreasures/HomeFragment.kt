@@ -10,7 +10,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recipetreasures.MealsAdapter
-import com.example.recipetreasures.data.AllAPi
+import com.example.recipetreasures.data.repo.MealsRepository
+import com.example.recipetreasures.data.retrofit.AllAPi
 import com.example.recipetreasures.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {

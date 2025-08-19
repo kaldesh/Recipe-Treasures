@@ -2,6 +2,7 @@ package com.example.recipetreasures.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.recipetreasures.data.repo.MealsRepository
 
 class MealsViewModelFactory(private val repo: MealsRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {

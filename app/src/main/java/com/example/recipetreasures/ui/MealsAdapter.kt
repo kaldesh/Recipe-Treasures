@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.recipetreasures.data.Meals
+import com.example.recipetreasures.data.model.Meals
 import com.example.recipetreasures.databinding.ItemMealBinding
 
 class MealsAdapter(

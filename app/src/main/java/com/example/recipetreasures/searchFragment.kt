@@ -5,17 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.recipetreasures.data.AllAPi
+import com.example.recipetreasures.data.retrofit.AllAPi
 import com.example.recipetreasures.databinding.FragmentSearchBinding
-import com.example.recipetreasures.ui.MealsRepository
+import com.example.recipetreasures.data.repo.MealsRepository
 import com.example.recipetreasures.ui.SearchViewModel
 
 class SearchFragment : Fragment() {

@@ -1,4 +1,4 @@
-package com.example.recipetreasures.data
+package com.example.recipetreasures.data.retrofit
 
 import com.google.gson.Gson
 import retrofit2.Retrofit
