@@ -19,7 +19,7 @@ class MealDetailsViewModel(
     fun getMealById(mealId: String) {
         viewModelScope.launch {
             val meal = repository.getMealById(mealId)
-            _meal.postValue(meal.toUiModel())
+            _meal.postValue(meal.toUiModel(false))
         }
     }
 }

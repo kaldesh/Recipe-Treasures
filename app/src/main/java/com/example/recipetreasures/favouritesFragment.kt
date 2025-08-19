@@ -6,54 +6,89 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [favouritesFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+import android.content.Context
+import android.widget.Toast
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.recipetreasures.data.db.AppDatabase
+import com.example.recipetreasures.data.repo.FavoredMealRepository
+import com.example.recipetreasures.data.repo.MealsRepository
+import com.example.recipetreasures.data.retrofit.AllAPi
+import com.example.recipetreasures.databinding.FragmentFavouritesBinding
+import com.example.recipetreasures.ui.FavoredMealViewModel
+import com.example.recipetreasures.ui.FavoredMealViewModelFactory
+import com.example.recipetreasures.ui.toUiModel
+import kotlinx.coroutines.launch
+import kotlin.getValue
+
 class favouritesFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding: FragmentFavouritesBinding? = null
+    private val binding get() = _binding!!
+
+    private lateinit var adapter: MealsAdapter
+
+    private val PREFS_NAME = "UserSession"
+    private val KEY_EMAIL = "current_user_email"
+    val prefs by lazy { requireContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE) }
+    val currentUserEmail by lazy { prefs.getString(KEY_EMAIL, null) }
+
+    private val dao by lazy { AppDatabase.getDatabase(requireContext().applicationContext).favoredMealDao() }
+    private val favoredMealRepo by lazy { FavoredMealRepository(dao) }
+    private val MealRepo by lazy { MealsRepository(AllAPi.recipeEndPoint) }
+    private val favoredMealViewModel by viewModels<FavoredMealViewModel> { FavoredMealViewModelFactory(favoredMealRepo, MealRepo, currentUserEmail!!) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favourites, container, false)
+    ): View {
+        _binding = FragmentFavouritesBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment favouritesFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            favouritesFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Initialize adapter with a mutable list
+        adapter = MealsAdapter(
+            mutableListOf(),
+            onItemClick = { meal ->
+                val mealId = meal.id
+                if (mealId.isNotBlank())
+                    findNavController().navigate(
+                        favouritesFragmentDirections.actionFavouritesFragmentToDetailsFragment(meal.id)
+                    )
+                else
+                    Toast.makeText(requireContext(), "Meal ID is null", Toast.LENGTH_SHORT).show()
+            },
+            onFavoriteClick = { meal ->
+                viewLifecycleOwner.lifecycleScope.launch {
+                    if (favoredMealViewModel.isMealFavored(meal.id))
+                        favoredMealViewModel.removeMealFromFavorites(meal.id)
+                    else
+                        favoredMealViewModel.addMealToFavorites(meal.id)
                 }
             }
+        )
+
+        binding.recyclerViewFavorite.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerViewFavorite.adapter = adapter
+
+
+        // Observe results
+        favoredMealViewModel.favoredMeals.observe(viewLifecycleOwner) { meals ->
+            viewLifecycleOwner.lifecycleScope.launch {
+                adapter.updateData(meals.map { it.toUiModel(favoredMealViewModel.isMealFavored(it.idMeal!!)) })
+            }
+        }
+        favoredMealViewModel.fetchFavoredMeals()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

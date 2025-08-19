@@ -13,9 +13,11 @@ data class MealsUiModel(
     val tags: String?,
     val youtubeUrl: String,
     val ingredients: List<String>,
-    val measures: List<String>
+    val measures: List<String>,
+    val strMealAlternate: String? = null,
+    var isFavored: Boolean,
 )
-fun Meals.toUiModel(): MealsUiModel {
+fun Meals.toUiModel(isFavored: Boolean): MealsUiModel {
     val ingredientsList = listOfNotNull(
         strIngredient1, strIngredient2, strIngredient3, strIngredient4, strIngredient5,
         strIngredient6, strIngredient7, strIngredient8, strIngredient9, strIngredient10,
@@ -32,14 +34,15 @@ fun Meals.toUiModel(): MealsUiModel {
 
     return MealsUiModel(
         id = idMeal ?: "",
-        name = strMeal ?: "",
-        category = strCategory ?: "",
+        name = strMeal  ?: "No Name",
+        category = strCategory ?: "No Catagory",
         area = strArea ?: "",
         instructions = strInstructions ?: "",
         thumbnailUrl = strMealThumb ?: "",
         tags = strTags,
         youtubeUrl = strYoutube ?: "",
         ingredients = ingredientsList,
-        measures = measuresList
+        measures = measuresList,
+        isFavored = isFavored
     )
 }
