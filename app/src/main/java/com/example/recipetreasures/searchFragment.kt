@@ -62,7 +62,7 @@ class SearchFragment : Fragment() {
                 val mealId = meal.id
                 if (mealId.isNotBlank())
                     findNavController().navigate(
-                        SearchFragmentDirections.actionSearchFragmentToDetailsFragment(mealId)
+                        HomeFragmentDirections.actionHomeFragmentToDetailsFragment(meal.id)
                     )
                 else
                     Toast.makeText(requireContext(), "Meal ID is null", Toast.LENGTH_SHORT).show()
