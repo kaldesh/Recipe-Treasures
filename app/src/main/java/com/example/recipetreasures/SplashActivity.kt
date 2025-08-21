@@ -27,6 +27,6 @@ class SplashActivity : AppCompatActivity() {
                 startActivity(Intent(this, AuthActivity::class.java))
             }
             finish()
-        }, 3000) // 3 ثواني
+        }, 3000)
     }
 }
