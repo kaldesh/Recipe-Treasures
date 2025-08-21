@@ -1495,6 +1495,8 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color gray
+color green
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color m3_appbar_overlay_color
@@ -2161,6 +2163,9 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color purple_200
+color purple_500
+color purple_700
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -2173,6 +2178,8 @@ color switch_thumb_material_dark
 color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
+color teal_200
+color teal_700
 color tooltip_background_dark
 color tooltip_background_light
 color white
@@ -3069,12 +3076,15 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable colors
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable favourite
+drawable food2
+drawable food3
 drawable food_bg
 drawable ic_arrow_back_black_24
 drawable ic_call_answer
@@ -3097,6 +3107,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
+drawable img
 drawable indeterminate_static
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -3170,6 +3181,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable rounded_bg
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3285,6 +3297,8 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btnNext
+id btnSkip
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3334,6 +3348,7 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
+id descText
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -3662,6 +3677,7 @@ id stretch
 id submenuarrow
 id submit_area
 id supportScrollUp
+id tabLayout
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -3725,6 +3741,7 @@ id unlabeled
 id up
 id useLogo
 id vertical_only
+id viewPager
 id view_offset_helper
 id view_transition
 id view_tree_disjoint_parent
@@ -3861,6 +3878,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_auth
 layout activity_main
+layout activity_onboarding
 layout activity_splash
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -3882,6 +3900,7 @@ layout fragment_about_us2
 layout fragment_details
 layout fragment_favourites
 layout fragment_home
+layout fragment_onboarding
 layout fragment_search
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity

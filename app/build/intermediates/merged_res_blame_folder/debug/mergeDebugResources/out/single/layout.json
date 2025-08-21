@@ -12,6 +12,10 @@
         "source": "com.example.recipetreasures.app-main-57:/layout/item_meal.xml"
     },
     {
+        "merged": "com.example.recipetreasures.app-mergeDebugResources-54:/layout/fragment_onboarding.xml",
+        "source": "com.example.recipetreasures.app-main-57:/layout/fragment_onboarding.xml"
+    },
+    {
         "merged": "com.example.recipetreasures.app-mergeDebugResources-54:/layout/activity_auth.xml",
         "source": "com.example.recipetreasures.app-main-57:/layout/activity_auth.xml"
     },
@@ -22,6 +26,10 @@
     {
         "merged": "com.example.recipetreasures.app-mergeDebugResources-54:/layout/fragment_home.xml",
         "source": "com.example.recipetreasures.app-main-57:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.example.recipetreasures.app-mergeDebugResources-54:/layout/activity_onboarding.xml",
+        "source": "com.example.recipetreasures.app-main-57:/layout/activity_onboarding.xml"
     },
     {
         "merged": "com.example.recipetreasures.app-mergeDebugResources-54:/layout/fragment_about_us2.xml",

@@ -1,12 +1,24 @@
 R_DEF: Internal format may change without notice
 local
 color black
+color gray
+color green
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
 color white
+drawable colors
 drawable favourite
+drawable food2
+drawable food3
 drawable food_bg
 drawable ic_favorite
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable img
+drawable rounded_bg
 id aboutUs2
 id action_favouritesFragment_to_detailsFragment
 id action_global_homeFragment
@@ -19,9 +31,12 @@ id app_brief
 id areaTv
 id bgImage
 id bottomNavigationView
+id btnNext
+id btnSkip
 id catagoryTv
 id categorytv
 id creators
+id descText
 id detailsFragment
 id emailInput
 id favoriteButton
@@ -49,6 +64,7 @@ id searchFragment
 id searchInput
 id signupBtn
 id splashAnim
+id tabLayout
 id textView14
 id textView2
 id textView5
@@ -58,14 +74,17 @@ id title
 id titleText
 id titletv
 id toolbar
+id viewPager
 id ytPlayerView
 layout activity_auth
 layout activity_main
+layout activity_onboarding
 layout activity_splash
 layout fragment_about_us2
 layout fragment_details
 layout fragment_favourites
 layout fragment_home
+layout fragment_onboarding
 layout fragment_search
 layout item_meal
 menu bottom_nav_menu
