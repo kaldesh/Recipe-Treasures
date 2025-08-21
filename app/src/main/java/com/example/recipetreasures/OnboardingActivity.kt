@@ -17,12 +17,15 @@ class OnboardingActivity : AppCompatActivity() {
     private lateinit var btnSkip: MaterialButton
     private lateinit var sharedPreferences: SharedPreferences
 
+    private val PREFS_NAME = "UserSession"
+    private val KEY_ONBOARDING = "onboarding_finished"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Check if onboarding is already finished
-        sharedPreferences = getSharedPreferences("onboarding", MODE_PRIVATE)
-        if (sharedPreferences.getBoolean("finished", false)) {
+        // ✅ Check if onboarding is already finished
+        sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
+        if (sharedPreferences.getBoolean(KEY_ONBOARDING, false)) {
             navigateToAuth()
             return
         }
@@ -58,7 +61,7 @@ class OnboardingActivity : AppCompatActivity() {
     }
 
     private fun finishOnboarding() {
-        sharedPreferences.edit().putBoolean("finished", true).apply()
+        sharedPreferences.edit().putBoolean(KEY_ONBOARDING, true).apply()
         navigateToAuth()
     }
 

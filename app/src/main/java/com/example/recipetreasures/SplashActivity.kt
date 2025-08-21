@@ -1,6 +1,5 @@
 package com.example.recipetreasures
 
-
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -12,6 +11,7 @@ class SplashActivity : AppCompatActivity() {
 
     private val PREFS_NAME = "UserSession"
     private val KEY_EMAIL = "current_user_email"
+    private val KEY_ONBOARDING = "onboarding_finished"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,13 +20,20 @@ class SplashActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
             val email = prefs.getString(KEY_EMAIL, null)
+            val onboardingFinished = prefs.getBoolean(KEY_ONBOARDING, false)
 
-            if (email != null) {
-                startActivity(Intent(this, MainActivity::class.java))
-            } else {
-                startActivity(Intent(this, AuthActivity::class.java))
+            when {
+                !onboardingFinished -> {
+                    startActivity(Intent(this, OnboardingActivity::class.java))
+                }
+                email != null -> {
+                    startActivity(Intent(this, MainActivity::class.java))
+                }
+                else -> {
+                    startActivity(Intent(this, AuthActivity::class.java))
+                }
             }
             finish()
-        }, 3000)
+        }, 3000) // 3 ثواني
     }
 }

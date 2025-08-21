@@ -30,17 +30,32 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.RecipeTreasures" >
+
+        <!-- 🟢 SplashActivity هي البداية -->
         <activity
-            android:name="com.example.recipetreasures.MainActivity"
-            android:exported="true" >
+            android:name="com.example.recipetreasures.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- 🟡 Onboarding -->
+        <activity
+            android:name="com.example.recipetreasures.OnboardingActivity"
+            android:exported="true" />
+
+        <!-- 🔵 Auth -->
         <activity
             android:name="com.example.recipetreasures.AuthActivity"
+            android:exported="true" />
+
+        <!-- 🟢 Main -->
+        <activity
+            android:name="com.example.recipetreasures.MainActivity"
             android:exported="true" />
 
         <provider
