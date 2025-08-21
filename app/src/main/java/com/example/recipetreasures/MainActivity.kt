@@ -3,12 +3,16 @@ package com.example.recipetreasures
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -58,7 +62,21 @@ class MainActivity : AppCompatActivity() {
 
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            supportActionBar?.title = "Welcome, " + getSharedPreferences(PREFS_NAME, MODE_PRIVATE).getString(KEY_EMAIL, "")
+            val email = getSharedPreferences(PREFS_NAME, MODE_PRIVATE).getString(KEY_EMAIL, "") ?: ""
+            val titleText = "Welcome, $email"
+
+            // Create a spannable string
+            val spannable = SpannableString(titleText)
+
+            // Apply color span to the whole text (or part of it if you want)
+            spannable.setSpan(
+                ForegroundColorSpan(ContextCompat.getColor(this, R.color.white)),
+                0, // start index
+                spannable.length, // end index
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+
+            supportActionBar?.title = spannable
             when(destination.id) {
                 R.id.detailsFragment -> bottomNav.visibility = View.GONE
                 else -> bottomNav.visibility = View.VISIBLE
